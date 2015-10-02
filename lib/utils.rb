@@ -1,7 +1,4 @@
-class StringUtility
-
-  # Creates a new instance of the StringUtility class
-  def initialize; end
+module StringUtility
 
   # Separates the string by another string. Useful for converting integers into human-readable numbers.
   # @param string [String] The string to separate.
@@ -17,5 +14,9 @@ class StringUtility
     string = array.join(separator)
     string = string.reverse!
     return string
+  end
+
+  def separate_with(string, count = 3, separator = ',')
+    StringUtility.separate_with(string, count, separator)
   end
 end
