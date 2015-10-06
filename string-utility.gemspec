@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.metadata = {
     'issue_tracker' => 'https://github.com/elifoster/string-utility-ruby/issues'
   }
-  s.required_ruby_version = '>= 2.0'
+  s.required_ruby_version = '>= 2.1'
   s.files = [
     'lib/utils.rb',
     'lib/string-utility.rb',

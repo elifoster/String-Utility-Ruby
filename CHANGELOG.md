@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.0.2
+* Require the right Ruby version, 2.1.
+
 ### Version 2.0.1
 * Fixed style issues thanks to Rubocop.
 
