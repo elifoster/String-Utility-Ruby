@@ -2,6 +2,7 @@
 ## Version 2
 ### Version 2.1.0
 * New to_i_separated method for converting a separated string to an integer.
+
 ### Version 2.0.2
 * Require the right Ruby version, 2.1.
 
