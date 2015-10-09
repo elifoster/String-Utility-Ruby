@@ -17,5 +17,14 @@ module StringUtility
 
       string
     end
+
+    # Converts a separated string into an integer. This is basically the reverse
+    #   of #separate.
+    # @return [Int] The integer version of the separated string.
+    def to_i_separated
+      string = self
+      string = string.gsub(/\D/, '')
+      string.to_i
+    end
   end
 end
