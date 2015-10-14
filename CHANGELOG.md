@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.3.0
+* New spacify method, which is essentially the opposite of underscorify.
+
 ### Version 2.2.0
 * New underscorify method to replace whitespace with underscores.
 

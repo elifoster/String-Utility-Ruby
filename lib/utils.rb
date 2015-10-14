@@ -34,5 +34,13 @@ module StringUtility
       string = string.gsub(/\s/, '_')
       string
     end
+
+    # Replaces all underscores with whitespace.
+    # @return [String] The string with replaced underscores.
+    def spacify
+      string = self
+      string = string.gsub('_', ' ')
+      string
+    end
   end
 end
