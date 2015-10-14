@@ -26,5 +26,13 @@ module StringUtility
       string = string.gsub(/\D/, '')
       string.to_i
     end
+
+    # Replaces all whitespace with underscores.
+    # @return [String] The string with replaced whitespace.
+    def underscorify
+      string = self
+      string = string.gsub(/\s/, '_')
+      string
+    end
   end
 end

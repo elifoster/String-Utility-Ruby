@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.2.0
+* New underscorify method to replace whitespace with underscores.
+
 ### Version 2.1.0
 * New to_i_separated method for converting a separated string to an integer.
 
