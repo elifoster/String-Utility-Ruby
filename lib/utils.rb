@@ -43,4 +43,10 @@ module StringUtility
       string
     end
   end
+
+  extend self
+  def self.random_line(path)
+    read = File.readlines(path)
+    read[rand(read.size)]
+  end
 end

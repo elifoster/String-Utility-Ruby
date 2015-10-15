@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.4.0
+* New random_line method for getting a random line in a file.
+
 ### Version 2.3.0
 * New spacify method, which is essentially the opposite of underscorify.
 
