@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.4.1
+* random_line properly returns the chomped version.
+
 ### Version 2.4.0
 * New random_line method for getting a random line in a file.
 

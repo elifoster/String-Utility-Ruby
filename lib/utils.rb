@@ -51,6 +51,6 @@ module StringUtility
   # @return [String] A random line in the file.
   def self.random_line(path)
     read = File.readlines(path)
-    read[rand(read.size)]
+    read[rand(read.size)].chomp
   end
 end
