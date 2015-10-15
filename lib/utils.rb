@@ -45,6 +45,10 @@ module StringUtility
   end
 
   extend self
+
+  # Gets a random line in a file.
+  # @param path [String] The path to the file.
+  # @return [String] A random line in the file.
   def self.random_line(path)
     read = File.readlines(path)
     read[rand(read.size)]
