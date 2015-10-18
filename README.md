@@ -2,8 +2,21 @@
 Provides some basic String utilities for Ruby
 
 ## Installation
+### RubyGems
 ```
 gem install string-utility
+```
+
+### Bundler
+Add this line to application's Gemfile:
+
+``` ruby
+gem('string-utility')
+```
+
+And then execute:
+```
+$ bundle
 ```
 
 ## Documentation
