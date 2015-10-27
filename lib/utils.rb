@@ -39,7 +39,7 @@ module StringUtility
     # @return [String] The string with replaced underscores.
     def spacify
       string = self
-      string = string.gsub('_', ' ')
+      string = string.tr('_', ' ')
       string
     end
   end
@@ -52,5 +52,22 @@ module StringUtility
   def self.random_line(path)
     read = File.readlines(path)
     read[rand(read.size)].chomp
+  end
+
+  def self.random_color_three
+    string = random_color(0..2)
+    "##{string}"
+  end
+
+  def self.random_color_six
+    string = random_color(0..5)
+    "##{string}"
+  end
+
+  private
+
+  def random_color(limit)
+    values = (('A'..'F').to_a + (0..9).to_a)
+    limit.map { values.sample }.join
   end
 end

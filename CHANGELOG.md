@@ -1,5 +1,9 @@
 # Changelog
 ## Version 2
+### Version 2.5.0
+* Improved spacify performance slightly.
+* New methods for getting web colors.
+
 ### Version 2.4.1
 * random_line properly returns the chomped version.
 
