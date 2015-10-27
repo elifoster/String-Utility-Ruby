@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.5.1
+* Docs for the new color methods
+
 ### Version 2.5.0
 * Improved spacify performance slightly.
 * New methods for getting web colors.

@@ -54,11 +54,15 @@ module StringUtility
     read[rand(read.size)].chomp
   end
 
+  # Gets a random three-digit hexidecimal web color string.
+  # @return [String] A random hexidecimal.
   def self.random_color_three
     string = random_color(0..2)
     "##{string}"
   end
 
+  # Gets a random six-digit hexidecimal web color string.
+  # @return [String] See #random_color_three
   def self.random_color_six
     string = random_color(0..5)
     "##{string}"
