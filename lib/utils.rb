@@ -10,37 +10,28 @@ module StringUtility
     def separate(count = 3, separator = ',')
       separator = separator[0] if separator.length > 1
       string = self
-      string = string.reverse
-      array = string.scan(/.{1,#{count}}/)
-      string = array.join(separator)
-      string = string.reverse
-
-      string
+      string.reverse!
+      string = string.scan(/.{1,#{count}}/).join(separator)
+      string.reverse!
     end
 
     # Converts a separated string into an integer. This is basically the reverse
     #   of #separate.
     # @return [Int] The integer version of the separated string.
     def to_i_separated
-      string = self
-      string = string.gsub(/\D/, '')
-      string.to_i
+      self.gsub!(/\D/, '').to_i
     end
 
     # Replaces all whitespace with underscores.
     # @return [String] The string with replaced whitespace.
     def underscorify
-      string = self
-      string = string.gsub(/\s/, '_')
-      string
+      self.gsub!(/\s/, '_')
     end
 
     # Replaces all underscores with whitespace.
     # @return [String] The string with replaced underscores.
     def spacify
-      string = self
-      string = string.tr('_', ' ')
-      string
+      self.tr!('_', ' ')
     end
   end
 
@@ -50,8 +41,13 @@ module StringUtility
   # @param path [String] The path to the file.
   # @return [String] A random line in the file.
   def self.random_line(path)
-    read = File.readlines(path)
-    read[rand(read.size)].chomp
+    file = open(path)
+    selected = nil
+    file.each_with_index do |line, num|
+      selected = line if !line.nil? && rand < 1.0 / num
+    end
+    file.close
+    selected
   end
 
   # Gets a random three-digit hexidecimal web color string.

@@ -1,5 +1,9 @@
 # Changelog
 ## Version 2
+### Version 2.6.0
+* Improve performance.
+* Add specs.
+
 ### Version 2.5.1
 * Docs for the new color methods
 
