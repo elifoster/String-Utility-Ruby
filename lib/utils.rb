@@ -19,19 +19,22 @@ module StringUtility
     #   of #separate.
     # @return [Int] The integer version of the separated string.
     def to_i_separated
-      self.gsub!(/\D/, '').to_i
+      self.gsub!(/\D/, '') if self =~ /\D/
+      to_i
     end
 
     # Replaces all whitespace with underscores.
     # @return [String] The string with replaced whitespace.
     def underscorify
-      self.gsub!(/\s/, '_')
+      self.gsub!(/\s/, '_') if self =~ /\s/
+      self
     end
 
     # Replaces all underscores with whitespace.
     # @return [String] The string with replaced underscores.
     def spacify
-      self.tr!('_', ' ')
+      self.tr!('_', ' ') if self.include?('_')
+      self
     end
   end
 

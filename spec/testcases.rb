@@ -12,14 +12,17 @@ class TestStringUtility < Test::Unit::TestCase
 
   def test_to_i_sparated
     assert_equal(1000, '1,000'.to_i_separated)
+    assert_equal(1000, '1000'.to_i_separated)
   end
 
   def test_underscorify
     assert_equal('_', ' '.underscorify)
+    assert_equal('Test', 'Test'.underscorify)
   end
 
   def test_spacify
     assert_equal(' ', '_'.spacify)
+    assert_equal('Test', 'Test'.spacify)
   end
 
   def test_random_line
