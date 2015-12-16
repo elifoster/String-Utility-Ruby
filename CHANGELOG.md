@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.6.1
+* Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil (#2).
+
 ### Version 2.6.0
 * Improve performance.
 * Add specs.
