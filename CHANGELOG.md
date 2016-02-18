@@ -1,5 +1,9 @@
 # Changelog
 ## Version 2
+### Version 2.7.0
+* Improve random_line by not dividing by 0.
+* Add safely_gsub! refinement method for an easier, more readable version of `str.gsub!(pattern, replace) || str`.
+
 ### Version 2.6.1
 * Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil (#2).
 

@@ -8,6 +8,7 @@ class TestStringUtility < Test::Unit::TestCase
     assert_equal('10,00', '1000'.separate(2))
     assert_equal('1:000', '1000'.separate(3, ':'))
     assert_equal('10:00', '1000'.separate(2, ':'))
+    assert_equal('100', '100'.separate)
   end
 
   def test_to_i_sparated
@@ -36,5 +37,11 @@ class TestStringUtility < Test::Unit::TestCase
 
   def test_random_color_six
     assert_instance_of(String, StringUtility.random_color_six)
+  end
+
+  def test_safely_gsub
+    assert_equal('b', 'b'.safely_gsub!('a', '1'))
+    assert_not_nil('b'.safely_gsub!('a', '1'))
+    assert_equal('bb', 'ab'.safely_gsub!('a', 'b'))
   end
 end
