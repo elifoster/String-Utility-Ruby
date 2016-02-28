@@ -1,5 +1,10 @@
 # Changelog
 ## Version 2
+### Version 2.7.1
+* Improve random_line performance by approximately 1 second real time.
+* Improve random_color performance by about 400-500%.
+* Improve separate performance by about 250%.
+
 ### Version 2.7.0
 * Improve random_line by not dividing by 0.
 * Add safely_gsub! refinement method for an easier, more readable version of `str.gsub!(pattern, replace) || str`.

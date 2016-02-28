@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'string-utility'
   s.summary = 'Provides some basic utilities for interacting with Strings'
-  s.version = '2.7.0'
+  s.version = '2.7.1'
   s.license = 'CC-BY-NC-ND-4.0'
   # @todo Expand on this description eventually.
   s.description = <<-EOF

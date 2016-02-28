@@ -8,16 +8,12 @@ module StringUtility
     #   1 character long. Defaults to a comma.
     # @return [String] A new formatted version of the provided string.
     def separate(count = 3, separator = ',')
-      separator = separator[0]
-      string = self
-      string.reverse!
-      string = string.scan(/.{1,#{count}}/).join(separator)
-      string.reverse!
+      chars.reverse!.each_slice(count).map(&:join).join(separator[0]).reverse!
     end
 
     # Converts a separated string into an integer. This is basically the reverse
     #   of #separate.
-    # @return [Int] The integer version of the separated string.
+    # @return [Integer] The integer version of the separated string.
     def to_i_separated
       safely_gsub!(/\D/, '').to_i
     end
@@ -47,37 +43,37 @@ module StringUtility
   extend self
 
   # Gets a random line in a file.
+  # This will include newlines and similar characters, so you may want to chomp the result.
   # @param path [String] The path to the file.
   # @return [String] A random line in the file.
   def self.random_line(path)
-    file = open(path)
-    selected = nil
-    file.each_with_index do |line, num|
-      int = num == 0 ? 1.0 : 1.0 / num
-      selected = line if !line.nil? && rand < int
-    end
-    file.close
-    selected
+    lines = File.readlines(path)
+    lines[rand(lines.count)]
   end
 
   # Gets a random three-digit hexadecimal web color string.
   # @return [String] A random hexadecimal.
   def self.random_color_three
-    string = random_color(0..2)
-    "##{string}"
+    random_color(3)
   end
 
   # Gets a random six-digit hexadecimal web color string.
   # @return [String] See #random_color_three
   def self.random_color_six
-    string = random_color(0..5)
-    "##{string}"
+    random_color(6)
   end
 
   private
 
+  STRING_VALS = ('A'..'F').to_a.freeze
+  INT_VALS = (0..9).to_a.freeze
+  COMBINED_VALS = (STRING_VALS + INT_VALS).freeze
+
   def random_color(limit)
-    values = (('A'..'F').to_a + (0..9).to_a)
-    limit.map { values.sample }.join
+    str = '#'
+    limit.times do
+      str << COMBINED_VALS.sample.to_s
+    end
+    str
   end
 end
