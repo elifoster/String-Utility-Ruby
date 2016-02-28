@@ -3,7 +3,7 @@ sudo: false
 before_install:
   - gem install bundler
 before_script:
-  -bundle install
+  - bundle install
 rvm:
   - 2.3.0
 notifications:
