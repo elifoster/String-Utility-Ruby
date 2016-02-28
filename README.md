@@ -1,4 +1,7 @@
 # String-Utility-Ruby
+[![Build Status](https://travis-ci.org/elifoster/String-Utility-Ruby.svg?branch=master)](https://travis-ci.org/elifoster/String-Utility-Ruby)
+[![Gem Version](https://badge.fury.io/rb/string-utility.svg)](https://badge.fury.io/rb/string-utility)
+
 Provides some basic String utilities for Ruby
 
 ## Installation
@@ -20,8 +23,4 @@ $ bundle
 ```
 
 ## Documentation
-Please see the [Wiki](https://github.com/elifoster/string-utility-ruby/wiki) for feature lists, documentation, and guides.
-
-You can also view the [RubyDocs](http://www.rubydoc.info/gems/string-utility) but they are more limited.
-
-You can also view the documentation in the code, which would probably be fastest for you anyway.
+Please see the [RubyDocs](http://www.rubydoc.info/gems/string-utility)
