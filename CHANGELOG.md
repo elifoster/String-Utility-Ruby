@@ -1,5 +1,9 @@
 # Changelog
 ## Version 2
+### Version 2.7.2
+* No longer include tests in gem package.
+* License as MIT
+
 ### Version 2.7.1
 * Improve random_line performance by approximately 1 second real time.
 * Improve random_color performance by about 400-500%.

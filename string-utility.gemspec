@@ -2,8 +2,8 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'string-utility'
   s.summary = 'Provides some basic utilities for interacting with Strings'
-  s.version = '2.7.1'
-  s.license = 'CC-BY-NC-ND-4.0'
+  s.version = '2.7.2'
+  s.license = 'MIT'
   # @todo Expand on this description eventually.
   s.description = <<-EOF
     Some simple but handy methods to interact with string objects.
@@ -17,8 +17,6 @@ Gem::Specification.new do |s|
   s.files = [
     'lib/utils.rb',
     'lib/string-utility.rb',
-    'spec/benchmark.rb',
-    'spec/testcases.rb',
     'CHANGELOG.md'
   ]
 end
