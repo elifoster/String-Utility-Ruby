@@ -2,6 +2,7 @@ language: ruby
 sudo: false
 before_install:
   - gem install bundler
+install:
   - curl -sL https://static.rust-lang.org/rustup.sh -o ~/rust-installer/rustup.sh
   - sh ~/rust-installer/rustup.sh --prefix=~/rust --spec=nightly -y --disable-sudo 2> /dev/null
   - rustc --version
