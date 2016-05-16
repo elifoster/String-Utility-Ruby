@@ -1,4 +1,9 @@
+require 'fiddle'
+
+LIBRARY = Fiddle.dlopen("#{File.dirname(__FILE__)}/../ext/target/release/libstringutility.dylib")
+
 module StringUtility
+  Fiddle::Function.new(LIBRARY['initialize_me'], [], Fiddle::TYPE_VOIDP).call
   refine String do
     # Separates the string by another string. Useful for converting integers
     #   into human-readable numbers.
@@ -16,18 +21,6 @@ module StringUtility
     # @return [Integer] The integer version of the separated string.
     def to_i_separated
       safely_gsub!(/\D/, '').to_i
-    end
-
-    # Replaces all whitespace with underscores.
-    # @return [String] The string with replaced whitespace.
-    def underscorify
-      safely_gsub!(/\s/, '_')
-    end
-
-    # Replaces all underscores with whitespace.
-    # @return [String] The string with replaced underscores.
-    def spacify
-      safely_gsub!('_', ' ')
     end
 
     # Readable shorthand for the only safe, fast way to use gsub! using || operators. Unlike gsub!, safely_gsub! will
@@ -76,4 +69,15 @@ module StringUtility
     end
     str
   end
+end
+
+# A module that contains stub methods for the Rust native extension methods.
+module StringUtilityNativeExtensionDocumentationStubs
+  # Replaces all whitespace with underscores.
+  # @return [String] The string with replaced whitespace.
+  def underscorify; end
+
+  # Replaces all underscores with whitespace.
+  # @return [String] The string with replaced underscores.
+  def spacify; end
 end

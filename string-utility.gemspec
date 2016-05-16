@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'string-utility'
   s.summary = 'Provides some basic utilities for interacting with Strings'
-  s.version = '2.7.2'
+  s.version = '2.7.3'
   s.license = 'MIT'
   # @todo Expand on this description eventually.
   s.description = <<-EOF
@@ -17,6 +17,10 @@ Gem::Specification.new do |s|
   s.files = [
     'lib/utils.rb',
     'lib/string-utility.rb',
-    'CHANGELOG.md'
+    'CHANGELOG.md',
+    'ext/Makefile',
+    'ext/Cargo.toml',
+    'ext/src/lib.rs'
   ]
+  s.extensions = Dir['ext/extconf.rb']
 end

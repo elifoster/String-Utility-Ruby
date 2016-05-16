@@ -1,5 +1,8 @@
 # Changelog
 ## Version 2
+### Version 2.7.3
+* Optimize underscorify and spacify with native extensions written in Rust, utilizing the ruru crate. These methods are now 2-5x faster. I did attempt to write a Rust extension for random_line, the slowest function in this library, but the performance increase was insignificant.
+
 ### Version 2.7.2
 * No longer include tests in gem package.
 * License as MIT
