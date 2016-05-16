@@ -2,8 +2,8 @@ language: ruby
 sudo: false
 before_install:
   - gem install bundler
-  - curl -sL https://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz | tar --strip-components=1 -C ~/rust -xzf -
-  - curl -sL https://static.rust-lang.org/cargo-dist/cargo-nightly-x86_64-unknown-linux-gnu.tar.gz | tar --strip-components=1 -C ~/rust -xzf -
+  - curl -sL https://static.rust-lang.org/rustup.sh -o ~/rust-installer/rustup.sh
+  - sh ~/rust-installer/rustup.sh --prefix=~/rust --spec=nightly -y --disable-sudo 2> /dev/null
   - rustc --version
   - cargo --version
 before_script:
