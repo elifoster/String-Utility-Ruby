@@ -1,5 +1,9 @@
 require 'test/unit'
-require_relative '../lib/utils'
+if ARGV.include?('--gem')
+  require 'string-utility'
+else
+  require_relative '../lib/utils'
+end
 
 class TestStringUtility < Test::Unit::TestCase
   using StringUtility
@@ -27,8 +31,7 @@ class TestStringUtility < Test::Unit::TestCase
   end
 
   def test_random_line
-    assert_instance_of(String, StringUtility.random_line("#{Dir.pwd}/" \
-                                                         'spec/testcases.rb'))
+    assert_instance_of(String, StringUtility.random_line("#{Dir.pwd}/spec/testcases.rb"))
   end
 
   def test_random_color_three
