@@ -1,5 +1,5 @@
 require 'test/unit'
-if ARGV.include?('--gem')
+if ARGV.include?('gem')
   require 'string-utility'
 else
   require_relative '../lib/utils'
