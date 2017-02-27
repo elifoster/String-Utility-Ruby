@@ -22,5 +22,4 @@ Gem::Specification.new do |s|
     'ext/Cargo.toml',
     'ext/src/lib.rs'
   ]
-  s.extensions = Dir['ext/extconf.rb']
 end
