@@ -32,6 +32,18 @@ Benchmark.bm do |b|
     end
   end
 
+  b.report('underscorify!') do
+    TIMES.times do
+      '     '.underscorify!
+    end
+  end
+
+  b.report('spacify!') do
+    TIMES.times do
+      '_____'.spacify!
+    end
+  end
+
   b.report('random_line') do
     TIMES.times do
       StringUtility.random_line("#{Dir.pwd}/README.md")
