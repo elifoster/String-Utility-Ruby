@@ -11,11 +11,11 @@ module StringUtility
       chars.reverse!.each_slice(count).map(&:join).join(separator[0]).reverse!
     end
 
-    # Converts a separated string into an integer. This is basically the reverse
-    #   of #separate.
+    # Converts a separated string into an integer. This is basically the reverse of #separate. Does not modify the
+    #   source string.
     # @return [Integer] The integer version of the separated string.
     def to_i_separated
-      safely_gsub!(/\D/, '').to_i
+      gsub(/\D/, '').to_i
     end
 
     # Replaces all whitespace with underscores.

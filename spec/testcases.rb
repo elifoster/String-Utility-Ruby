@@ -16,8 +16,13 @@ class TestStringUtility < Test::Unit::TestCase
   end
 
   def test_to_i_sparated
-    assert_equal(1000, '1,000'.to_i_separated)
-    assert_equal(1000, '1000'.to_i_separated)
+    value = '1,000'
+    assert_equal(1000, value.to_i_separated)
+    assert_equal('1,000', value)
+
+    value = '1000'
+    assert_equal(1000, value.to_i_separated)
+    assert_equal('1000', value)
   end
 
   def test_underscorify
