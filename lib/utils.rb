@@ -30,9 +30,15 @@ module StringUtility
       safely_gsub!(/\s/, '_')
     end
 
-    # Replaces all underscores with whitespace.
-    # @return [String] The string with replaced underscores.
+    # Replaces all underscores with whitespace. Does not modify the source string.
+    # @return [String] A new string with replaced underscores.
     def spacify
+      gsub('_', ' ')
+    end
+
+    # Replaces all underscores with whitespace. Modifies the source string in-place.
+    # @return [String] see #safely_gsub!
+    def spacify!
       safely_gsub!('_', ' ')
     end
 

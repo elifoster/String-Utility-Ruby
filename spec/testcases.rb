@@ -44,8 +44,21 @@ class TestStringUtility < Test::Unit::TestCase
   end
 
   def test_spacify
-    assert_equal(' ', '_'.spacify)
-    assert_equal('Test', 'Test'.spacify)
+    value = '_'
+    assert_equal(' ', value.spacify)
+    assert_equal('_', value)
+
+    value = 'Test'
+    assert_equal('Test', value.spacify)
+    assert_equal('Test', value)
+
+    value = '_'
+    value.spacify!
+    assert_equal(' ', value)
+
+    value = 'Test'
+    value.spacify!
+    assert_equal('Test', value)
   end
 
   def test_random_line
