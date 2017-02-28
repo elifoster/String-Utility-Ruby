@@ -18,9 +18,15 @@ module StringUtility
       gsub(/\D/, '').to_i
     end
 
-    # Replaces all whitespace with underscores.
-    # @return [String] The string with replaced whitespace.
+    # Replaces all whitespace with underscores. Does not modify the source string.
+    # @return [String] A new string with replaced whitespace.
     def underscorify
+      gsub(/\s/, '_')
+    end
+
+    # Replaces all whitespace with underscores. Modifies the source string in-place.
+    # @return [String] see #safely_gsub!
+    def underscorify!
       safely_gsub!(/\s/, '_')
     end
 

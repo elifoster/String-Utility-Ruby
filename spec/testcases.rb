@@ -26,8 +26,21 @@ class TestStringUtility < Test::Unit::TestCase
   end
 
   def test_underscorify
-    assert_equal('_', ' '.underscorify)
-    assert_equal('Test', 'Test'.underscorify)
+    value = ' '
+    assert_equal('_', value.underscorify)
+    assert_equal(' ', value)
+
+    value = 'Test'
+    assert_equal('Test', value.underscorify)
+    assert_equal('Test', value)
+
+    value = ' '
+    value.underscorify!
+    assert_equal('_', value)
+
+    value = 'Test'
+    value.underscorify!
+    assert_equal('Test', value)
   end
 
   def test_spacify
