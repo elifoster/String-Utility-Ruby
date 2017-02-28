@@ -27,7 +27,7 @@ module StringUtility
     # Replaces all whitespace with underscores. Modifies the source string in-place.
     # @return [String] see #safely_gsub!
     def underscorify!
-      safely_gsub!(/\s/, '_')
+      gsub!(/\s/, '_')
     end
 
     # Replaces all underscores with whitespace. Does not modify the source string.
@@ -39,16 +39,7 @@ module StringUtility
     # Replaces all underscores with whitespace. Modifies the source string in-place.
     # @return [String] see #safely_gsub!
     def spacify!
-      safely_gsub!('_', ' ')
-    end
-
-    # Readable shorthand for the only safe, fast way to use gsub! using || operators. Unlike gsub!, safely_gsub! will
-    # NEVER return nil. This method should not be used instead of gsub! when the string replacement is predictable, as
-    # this method is somewhat slower than gsub! (see spec/benchmark).
-    # @see #{String#gsub!} for parameters and other information.
-    # @return [String] Exactly what gsub! would return, or self. Never nil.
-    def safely_gsub!(pattern, replace)
-      gsub!(pattern, replace) || self
+      gsub!('_', ' ')
     end
   end
 

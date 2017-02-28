@@ -50,36 +50,3 @@ Benchmark.bm do |b|
     end
   end
 end
-
-Benchmark.bm do |b|
-  b.report('gsub! success') do
-    TIMES.times do
-      'ABC'.gsub!('ABC', '123')
-    end
-  end
-
-  b.report('safely_gsub! success') do
-    TIMES.times do
-      'ABC'.safely_gsub!('ABC', '123')
-    end
-  end
-
-  b.report('gsub! fail') do
-    TIMES.times do
-      'ABC'.gsub!('DEF', '456')
-    end
-  end
-
-  b.report('gsub! fail safe') do
-    TIMES.times do
-      str = 'ABC'
-      str.gsub!('DEF', '456') || str
-    end
-  end
-
-  b.report('safely_gsub! fail') do
-    TIMES.times do
-      'ABC'.safely_gsub!('DEF', '456')
-    end
-  end
-end

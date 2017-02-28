@@ -72,10 +72,4 @@ class TestStringUtility < Test::Unit::TestCase
   def test_random_color_six
     assert_instance_of(String, StringUtility.random_color_six)
   end
-
-  def test_safely_gsub
-    assert_equal('b', 'b'.safely_gsub!('a', '1'))
-    assert_not_nil('b'.safely_gsub!('a', '1'))
-    assert_equal('bb', 'ab'.safely_gsub!('a', 'b'))
-  end
 end
