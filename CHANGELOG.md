@@ -1,4 +1,16 @@
 # Changelog
+## Version 3
+### Version 3.0.0
+* Improved test coverage and accuracy significantly by (a) having more tests; and (b) having tests cover return values as well as self-modification non-return values (i.e., checking what happens *after* a bang method is called).
+* `spacify` and `underscorify` are no longer Rust native extensions. The Ruby methods were not slow enough to warrant native extensions, and this was complicated when using external build services like Heroku.
+* `to_i_separated` no longer modifies the source string (it is non-destructive).
+* `underscorify` is no longer destructive.
+* New method `underscorify!`, destructive version of `underscorify`.
+* `spacify` is no longer destructive.
+* New method `spacify!`, destructive version of `spacify`.
+* Remove `safely_gsub!`, as it undermines the actual usage of `gsub!` (you probably aren't going to be doing `str = str.gsub!('a', 'b')`, and if you are, you are using it wrongly.)
+* New method `separate!`, destructive version of `separate`.
+
 ## Version 2
 ### Version 2.7.3
 * Optimize underscorify and spacify with native extensions written in Rust, utilizing the ruru crate. These methods are now 2-5x faster. I did attempt to write a Rust extension for random_line, the slowest function in this library, but the performance increase was insignificant.
