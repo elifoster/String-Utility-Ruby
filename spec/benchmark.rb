@@ -14,6 +14,12 @@ Benchmark.bm do |b|
     end
   end
 
+  b.report('separate!') do
+    TIMES.times do
+      '1000'.separate!
+    end
+  end
+
   b.report('to_i_separated') do
     TIMES.times do
       '1,000'.to_i_separated

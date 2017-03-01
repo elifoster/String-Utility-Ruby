@@ -11,6 +11,19 @@ module StringUtility
       chars.reverse!.each_slice(count).map(&:join).join(separator[0]).reverse!
     end
 
+    # In-place version of #separate. This is about two times slower than the non-destructive variant. This is because
+    #   the destructive version (this one) uses regular expressions to insert the string.
+    # see #separate
+    def separate!(count = 3, separator = ',')
+      reverse!
+      gsub!(/(.{#{count}})/, "\\1#{separator[0]}")
+      # Because of that regular expression, sometimes a separator character will be inserted at the end.
+      # For example, '1000'.separate!(2) would result in ,10,00.
+      # This is not ideal, but it works.
+      chomp!(separator[0])
+      reverse!
+    end
+
     # Converts a separated string into an integer. This is basically the reverse of #separate. Does not modify the
     #   source string.
     # @return [Integer] The integer version of the separated string.

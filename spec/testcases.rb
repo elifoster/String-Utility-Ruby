@@ -11,22 +11,38 @@ class TestStringUtility < Test::Unit::TestCase
     value = '1000'
     assert_equal('1,000', value.separate)
     assert_equal('1000', value)
+    value.separate!
+    assert_equal('1,000', value)
 
     value = '1000'
     assert_equal('10,00', value.separate(2))
     assert_equal('1000', value)
+    value.separate!(2)
+    assert_equal('10,00', value)
 
     value = '1000'
     assert_equal('1:000', value.separate(3, ':'))
     assert_equal('1000', value)
+    value.separate!(3, ':')
+    assert_equal('1:000', value)
 
     value = '1000'
     assert_equal('10:00', value.separate(2, ':'))
     assert_equal('1000', value)
+    value.separate!(2, ':')
+    assert_equal('10:00', value)
 
     value = '100'
     assert_equal('100', value.separate)
     assert_equal('100', value)
+    value.separate!
+    assert_equal('100', value)
+
+    value = '1000000000'
+    assert_equal('1,000,000,000', value.separate)
+    assert_equal('1000000000', value)
+    value.separate!
+    assert_equal('1,000,000,000', value)
   end
 
   def test_to_i_sparated
