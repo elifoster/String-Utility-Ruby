@@ -16,7 +16,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    string-utility (3.0.0)
 
 PLATFORMS
   ruby
@@ -24,7 +23,6 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 11.1)
   rspec (~> 3.6)
-  string-utility (~> 3)
 
 RUBY VERSION
    ruby 2.4.1p111
