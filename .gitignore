@@ -35,5 +35,3 @@ build/
 .rvmrc
 
 test.rb
-target/
-Cargo.lock
