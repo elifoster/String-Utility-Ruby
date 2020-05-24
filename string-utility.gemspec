@@ -18,5 +18,6 @@ Gem::Specification.new do |s|
     'lib/string_utility.rb',
     'lib/string-utility.rb',
     'CHANGELOG.md',
+    'LICENSE.md',
   ]
 end
