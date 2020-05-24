@@ -2,7 +2,7 @@ require 'benchmark'
 if ARGV.include?('--gem')
   require 'string-utility'
 else
-  require_relative '../lib/utils'
+  require_relative '../lib/string_utility'
 end
 
 TIMES = 100_000

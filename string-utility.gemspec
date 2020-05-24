@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   }
   s.required_ruby_version = '>= 2.1'
   s.files = [
-    'lib/utils.rb',
+    'lib/string_utility.rb',
     'lib/string-utility.rb',
     'CHANGELOG.md',
   ]
