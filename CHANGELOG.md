@@ -29,7 +29,7 @@
 * Add safely_gsub! refinement method for an easier, more readable version of `str.gsub!(pattern, replace) || str`.
 
 ### Version 2.6.1
-* Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil (#2).
+* Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil ([#2](https://github.com/elifoster/string-utility-ruby/issues/2)).
 
 ### Version 2.6.0
 * Improve performance.
