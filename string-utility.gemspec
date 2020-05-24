@@ -11,7 +11,10 @@ Gem::Specification.new do |s|
   s.email = 'elifosterwy@gmail.com'
   s.homepage = 'https://github.com/elifoster/string-utility-ruby'
   s.metadata = {
-    'issue_tracker' => 'https://github.com/elifoster/string-utility-ruby/issues'
+    'bug_tracker_uri' => 'https://github.com/elifoster/string-utility-ruby/issues',
+    'changelog_uri' => 'https://elifoster.github.io/String-Utility-Ruby/file.CHANGELOG.html',
+    'documentation_uri' => 'https://elifoster.github.io/String-Utility-Ruby/',
+    'source_code_uri' => 'https://github.com/elifoster/string-utility-ruby'
   }
   s.required_ruby_version = '>= 2.1'
   s.files = [
