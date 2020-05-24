@@ -23,4 +23,5 @@ $ bundle
 ```
 
 ## Documentation
-Please see the [RubyDocs](http://www.rubydoc.info/gems/string-utility)
+* [RubyDocs](http://www.rubydoc.info/gems/string-utility)
+* [GitHub pages](https://elifoster.github.io/String-Utility-Ruby/)
