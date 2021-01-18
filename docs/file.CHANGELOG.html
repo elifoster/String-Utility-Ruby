@@ -6,7 +6,7 @@
 <title>
   File: CHANGELOG
   
-    &mdash; Documentation by YARD 0.9.25
+    &mdash; Documentation by YARD 0.9.26
   
 </title>
 
@@ -57,152 +57,153 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1 id="changelog">Changelog</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Changelog">Changelog</h1>
 
-<h2 id="version-3">Version 3</h2>
+<h2 id="label-Version+3">Version 3</h2>
 
-<h3 id="version-3-0-1">Version 3.0.1</h3>
+<h3 id="label-Version+3.0.1">Version 3.0.1</h3>
+<ul><li>
+<p>Improve file naming standards: lib/utils.rb is now lib/string_utility.rb. This shouldn&#39;t really affect much from the consumer perspective, as string-utility.rb is still available (<a href="https://github.com/elifoster/string-utility-ruby/issues/5">#5</a>).</p>
+</li><li>
+<p>Update gem metadata links</p>
+</li><li>
+<p>License is now included in gem</p>
+</li></ul>
 
-<ul>
-<li>Improve file naming standards: lib/utils.rb is now lib/string_utility.rb. This shouldn&#39;t really affect much from the consumer perspective, as string-utility.rb is still available (<a href="https://github.com/elifoster/string-utility-ruby/issues/5">#5</a>).</li>
-<li>Update gem metadata links</li>
-<li>License is now included in gem</li>
-</ul>
+<h3 id="label-Version+3.0.0">Version 3.0.0</h3>
+<ul><li>
+<p>Improved test coverage and accuracy significantly by (a) having more tests; and (b) having tests cover return values as well as self-modification non-return values (i.e., checking what happens <em>after</em> a bang method is called).</p>
+</li><li>
+<p><code>spacify</code> and <code>underscorify</code> are no longer Rust native extensions. The Ruby methods were not slow enough to warrant native extensions, and this was complicated when using external build services like Heroku.</p>
+</li><li>
+<p><code>to_i_separated</code> no longer modifies the source string (it is non-destructive).</p>
+</li><li>
+<p><code>underscorify</code> is no longer destructive.</p>
+</li><li>
+<p>New method <code>underscorify!</code>, destructive version of <code>underscorify</code>.</p>
+</li><li>
+<p><code>spacify</code> is no longer destructive.</p>
+</li><li>
+<p>New method <code>spacify!</code>, destructive version of <code>spacify</code>.</p>
+</li><li>
+<p>Remove <code>safely_gsub!</code>, as it undermines the actual usage of <code>gsub!</code> (you probably aren&#39;t going to be doing <code>str = str.gsub!(&#39;a&#39;, &#39;b&#39;)</code>, and if you are, you are using it wrongly.)</p>
+</li><li>
+<p>New method <code>separate!</code>, destructive version of <code>separate</code>.</p>
+</li></ul>
 
-<h3 id="version-3-0-0">Version 3.0.0</h3>
+<h2 id="label-Version+2">Version 2</h2>
 
-<ul>
-<li>Improved test coverage and accuracy significantly by (a) having more tests; and (b) having tests cover return values as well as self-modification non-return values (i.e., checking what happens <em>after</em> a bang method is called).</li>
-<li><code>spacify</code> and <code>underscorify</code> are no longer Rust native extensions. The Ruby methods were not slow enough to warrant native extensions, and this was complicated when using external build services like Heroku.</li>
-<li><code>to_i_separated</code> no longer modifies the source string (it is non-destructive).</li>
-<li><code>underscorify</code> is no longer destructive.</li>
-<li>New method <code>underscorify!</code>, destructive version of <code>underscorify</code>.</li>
-<li><code>spacify</code> is no longer destructive.</li>
-<li>New method <code>spacify!</code>, destructive version of <code>spacify</code>.</li>
-<li>Remove <code>safely_gsub!</code>, as it undermines the actual usage of <code>gsub!</code> (you probably aren&#39;t going to be doing <code>str = str.gsub!(&#39;a&#39;, &#39;b&#39;)</code>, and if you are, you are using it wrongly.)</li>
-<li>New method <code>separate!</code>, destructive version of <code>separate</code>.</li>
-</ul>
+<h3 id="label-Version+2.7.3">Version 2.7.3</h3>
+<ul><li>
+<p>Optimize underscorify and spacify with native extensions written in Rust, utilizing the ruru crate. These methods are now 2-5x faster. I did attempt to write a Rust extension for random_line, the slowest function in this library, but the performance increase was insignificant.</p>
+</li></ul>
 
-<h2 id="version-2">Version 2</h2>
+<h3 id="label-Version+2.7.2">Version 2.7.2</h3>
+<ul><li>
+<p>No longer include tests in gem package.</p>
+</li><li>
+<p>License as MIT</p>
+</li></ul>
 
-<h3 id="version-2-7-3">Version 2.7.3</h3>
+<h3 id="label-Version+2.7.1">Version 2.7.1</h3>
+<ul><li>
+<p>Improve random_line performance by approximately 1 second real time.</p>
+</li><li>
+<p>Improve random_color performance by about 400-500%.</p>
+</li><li>
+<p>Improve separate performance by about 250%.</p>
+</li></ul>
 
-<ul>
-<li>Optimize underscorify and spacify with native extensions written in Rust, utilizing the ruru crate. These methods are now 2-5x faster. I did attempt to write a Rust extension for random_line, the slowest function in this library, but the performance increase was insignificant.</li>
-</ul>
+<h3 id="label-Version+2.7.0">Version 2.7.0</h3>
+<ul><li>
+<p>Improve random_line by not dividing by 0.</p>
+</li><li>
+<p>Add safely_gsub! refinement method for an easier, more readable version of <code>str.gsub!(pattern, replace) || str</code>.</p>
+</li></ul>
 
-<h3 id="version-2-7-2">Version 2.7.2</h3>
+<h3 id="label-Version+2.6.1">Version 2.6.1</h3>
+<ul><li>
+<p>Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil (<a href="https://github.com/elifoster/string-utility-ruby/issues/2">#2</a>).</p>
+</li></ul>
 
-<ul>
-<li>No longer include tests in gem package.</li>
-<li>License as MIT</li>
-</ul>
+<h3 id="label-Version+2.6.0">Version 2.6.0</h3>
+<ul><li>
+<p>Improve performance.</p>
+</li><li>
+<p>Add specs.</p>
+</li></ul>
 
-<h3 id="version-2-7-1">Version 2.7.1</h3>
+<h3 id="label-Version+2.5.1">Version 2.5.1</h3>
+<ul><li>
+<p>Docs for the new color methods</p>
+</li></ul>
 
-<ul>
-<li>Improve random_line performance by approximately 1 second real time.</li>
-<li>Improve random_color performance by about 400-500%.</li>
-<li>Improve separate performance by about 250%.</li>
-</ul>
+<h3 id="label-Version+2.5.0">Version 2.5.0</h3>
+<ul><li>
+<p>Improved spacify performance slightly.</p>
+</li><li>
+<p>New methods for getting web colors.</p>
+</li></ul>
 
-<h3 id="version-2-7-0">Version 2.7.0</h3>
+<h3 id="label-Version+2.4.1">Version 2.4.1</h3>
+<ul><li>
+<p>random_line properly returns the chomped version.</p>
+</li></ul>
 
-<ul>
-<li>Improve random_line by not dividing by 0.</li>
-<li>Add safely_gsub! refinement method for an easier, more readable version of <code>str.gsub!(pattern, replace) || str</code>.</li>
-</ul>
+<h3 id="label-Version+2.4.0">Version 2.4.0</h3>
+<ul><li>
+<p>New random_line method for getting a random line in a file.</p>
+</li></ul>
 
-<h3 id="version-2-6-1">Version 2.6.1</h3>
+<h3 id="label-Version+2.3.0">Version 2.3.0</h3>
+<ul><li>
+<p>New spacify method, which is essentially the opposite of underscorify.</p>
+</li></ul>
 
-<ul>
-<li>Fix issue where to_i_separated, underscorify, and spacify returned nil, due to tr! and gsub! returning nil (<a href="https://github.com/elifoster/string-utility-ruby/issues/2">#2</a>).</li>
-</ul>
+<h3 id="label-Version+2.2.0">Version 2.2.0</h3>
+<ul><li>
+<p>New underscorify method to replace whitespace with underscores.</p>
+</li></ul>
 
-<h3 id="version-2-6-0">Version 2.6.0</h3>
+<h3 id="label-Version+2.1.0">Version 2.1.0</h3>
+<ul><li>
+<p>New to_i_separated method for converting a separated string to an integer.</p>
+</li></ul>
 
-<ul>
-<li>Improve performance.</li>
-<li>Add specs.</li>
-</ul>
+<h3 id="label-Version+2.0.2">Version 2.0.2</h3>
+<ul><li>
+<p>Require the right Ruby version, 2.1.</p>
+</li></ul>
 
-<h3 id="version-2-5-1">Version 2.5.1</h3>
+<h3 id="label-Version+2.0.1">Version 2.0.1</h3>
+<ul><li>
+<p>Fixed style issues thanks to Rubocop.</p>
+</li></ul>
 
-<ul>
-<li>Docs for the new color methods</li>
-</ul>
+<h3 id="label-Version+2.0.0">Version 2.0.0</h3>
+<ul><li>
+<p>There is no longer an initialize method.</p>
+</li><li>
+<p>separate is now a monkeypatch using the refine keyword.</p>
+</li></ul>
 
-<h3 id="version-2-5-0">Version 2.5.0</h3>
+<h2 id="label-Version+1">Version 1</h2>
 
-<ul>
-<li>Improved spacify performance slightly.</li>
-<li>New methods for getting web colors.</li>
-</ul>
+<h3 id="label-Version+1.0.1">Version 1.0.1</h3>
+<ul><li>
+<p>No longer need to create an instance of StringUtility. Not really sure why I made that the case in the first place.</p>
 
-<h3 id="version-2-4-1">Version 2.4.1</h3>
-
-<ul>
-<li>random_line properly returns the chomped version.</li>
-</ul>
-
-<h3 id="version-2-4-0">Version 2.4.0</h3>
-
-<ul>
-<li>New random_line method for getting a random line in a file.</li>
-</ul>
-
-<h3 id="version-2-3-0">Version 2.3.0</h3>
-
-<ul>
-<li>New spacify method, which is essentially the opposite of underscorify.</li>
-</ul>
-
-<h3 id="version-2-2-0">Version 2.2.0</h3>
-
-<ul>
-<li>New underscorify method to replace whitespace with underscores.</li>
-</ul>
-
-<h3 id="version-2-1-0">Version 2.1.0</h3>
-
-<ul>
-<li>New to_i_separated method for converting a separated string to an integer.</li>
-</ul>
-
-<h3 id="version-2-0-2">Version 2.0.2</h3>
-
-<ul>
-<li>Require the right Ruby version, 2.1.</li>
-</ul>
-
-<h3 id="version-2-0-1">Version 2.0.1</h3>
-
-<ul>
-<li>Fixed style issues thanks to Rubocop.</li>
-</ul>
-
-<h3 id="version-2-0-0">Version 2.0.0</h3>
-
-<ul>
-<li>There is no longer an initialize method.</li>
-<li>separate is now a monkeypatch using the refine keyword.</li>
-</ul>
-
-<h2 id="version-1">Version 1</h2>
-
-<h3 id="version-1-0-1">Version 1.0.1</h3>
-
-<ul>
-<li>No longer need to create an instance of StringUtility. Not really sure why I made that the case in the first place.
-### Version 1.0.0</li>
-<li>Initial version. Currently only includes separate_with.</li>
-</ul>
+<h3 id="label-Version+1.0.0">Version 1.0.0</h3>
+</li><li>
+<p>Initial version. Currently only includes separate_with.</p>
+</li></ul>
 </div></div>
 
       <div id="footer">
-  Generated on Sun May 24 10:45:27 2020 by
+  Generated on Mon Jan 18 11:10:17 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.6.5).
+  0.9.26 (ruby-3.0.0).
 </div>
 
     </div>
